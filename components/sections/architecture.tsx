@@ -1,7 +1,8 @@
 'use client';
 
-import { useEffect, useRef, useState } from 'react';
-import { Database, Lock, Zap, LogInIcon as LogsIcon, ArrowDown, ArrowRight } from 'lucide-react';
+import { useRef, useState, useEffect } from 'react';
+import { Database, Lock, Zap, LogInIcon as LogsIcon } from 'lucide-react';
+import ArchitectureFlow from '@/components/ui/architecture-flow';
 
 export default function ArchitectureSection() {
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -68,121 +69,8 @@ export default function ArchitectureSection() {
         <div className={`mb-20 rounded-2xl border border-primary/20 bg-gradient-to-br from-primary/5 to-accent/5 p-8 md:p-12 transition-all duration-700 ${isVisible ? 'animate-fade-in-up' : 'opacity-0'}`}>
           <h3 className="text-2xl font-bold mb-8 text-foreground text-center">Architecture Flow</h3>
           
-          <div className="flex flex-col items-center gap-6">
-            {/* Layer 1: LLM */}
-            <div className="w-full max-w-2xl">
-              <div className="bg-gradient-to-r from-blue-500/20 to-blue-600/20 border-2 border-blue-500/50 rounded-xl p-6 text-center shadow-lg shadow-blue-500/20">
-                <div className="text-3xl mb-2">🤖</div>
-                <h4 className="text-xl font-bold text-foreground mb-1">Large Language Model</h4>
-                <p className="text-sm text-muted-foreground">OpenAI, Claude, Gemini, etc.</p>
-              </div>
-            </div>
+          <ArchitectureFlow />
 
-            <ArrowDown className="text-primary animate-bounce" size={32} />
-
-            {/* Layer 2: MCP Protocol */}
-            <div className="w-full max-w-2xl">
-              <div className="bg-gradient-to-r from-purple-500/20 to-purple-600/20 border-2 border-purple-500/50 rounded-xl p-6 text-center shadow-lg shadow-purple-500/20">
-                <div className="text-3xl mb-2">🔌</div>
-                <h4 className="text-xl font-bold text-foreground mb-1">Model Context Protocol</h4>
-                <p className="text-sm text-muted-foreground">Standardized communication layer</p>
-              </div>
-            </div>
-
-            <ArrowDown className="text-primary animate-bounce" size={32} />
-
-            {/* Layer 3: MCP Server Layers */}
-            <div className="w-full max-w-4xl">
-              <div className="bg-gradient-to-r from-primary/10 to-accent/10 border-2 border-primary/50 rounded-xl p-8 shadow-lg shadow-primary/20">
-                <h4 className="text-xl font-bold text-foreground mb-6 text-center">MCP Server Architecture</h4>
-                
-                <div className="space-y-4">
-                  {/* Tools Layer */}
-                  <div className="bg-primary/10 border border-primary/30 rounded-lg p-4 hover:bg-primary/20 transition-all">
-                    <div className="flex items-center gap-3 mb-2">
-                      <div className="w-10 h-10 rounded-lg bg-primary/30 flex items-center justify-center">
-                        <span className="text-lg">🛠️</span>
-                      </div>
-                      <div>
-                        <h5 className="font-bold text-foreground">Tools Layer</h5>
-                        <p className="text-xs text-muted-foreground">141+ registered MCP tools</p>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="flex justify-center">
-                    <ArrowDown className="text-primary/50" size={24} />
-                  </div>
-
-                  {/* Services Layer */}
-                  <div className="bg-primary/10 border border-primary/30 rounded-lg p-4 hover:bg-primary/20 transition-all">
-                    <div className="flex items-center gap-3 mb-2">
-                      <div className="w-10 h-10 rounded-lg bg-primary/30 flex items-center justify-center">
-                        <span className="text-lg">🔧</span>
-                      </div>
-                      <div>
-                        <h5 className="font-bold text-foreground">Services Layer</h5>
-                        <p className="text-xs text-muted-foreground">Business logic & API operations</p>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="flex justify-center">
-                    <ArrowDown className="text-primary/50" size={24} />
-                  </div>
-
-                  {/* Config & Utils Layer */}
-                  <div className="grid md:grid-cols-2 gap-4">
-                    <div className="bg-primary/10 border border-primary/30 rounded-lg p-4 hover:bg-primary/20 transition-all">
-                      <div className="flex items-center gap-3">
-                        <div className="w-10 h-10 rounded-lg bg-primary/30 flex items-center justify-center">
-                          <span className="text-lg">⚙️</span>
-                        </div>
-                        <div>
-                          <h5 className="font-bold text-foreground">Configuration</h5>
-                          <p className="text-xs text-muted-foreground">Environment & schemas</p>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="bg-primary/10 border border-primary/30 rounded-lg p-4 hover:bg-primary/20 transition-all">
-                      <div className="flex items-center gap-3">
-                        <div className="w-10 h-10 rounded-lg bg-primary/30 flex items-center justify-center">
-                          <span className="text-lg">⚡</span>
-                        </div>
-                        <div>
-                          <h5 className="font-bold text-foreground">Utilities</h5>
-                          <p className="text-xs text-muted-foreground">Logging & validation</p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <ArrowDown className="text-primary animate-bounce" size={32} />
-
-            {/* Layer 4: Platform APIs */}
-            <div className="w-full max-w-4xl">
-              <div className="bg-gradient-to-r from-green-500/20 to-green-600/20 border-2 border-green-500/50 rounded-xl p-6 shadow-lg shadow-green-500/20">
-                <h4 className="text-xl font-bold text-foreground mb-4 text-center">Platform REST APIs</h4>
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                  {[
-                    { name: 'GitHub', icon: '🐙', tools: '57 tools' },
-                    { name: 'Bitbucket', icon: '🪣', tools: '25 tools' },
-                    { name: 'GitLab', icon: '🦊', tools: '28 tools' },
-                    { name: 'Jira', icon: '📋', tools: '31 tools' },
-                  ].map((platform, idx) => (
-                    <div key={idx} className="bg-green-500/10 border border-green-500/30 rounded-lg p-3 text-center hover:bg-green-500/20 transition-all">
-                      <div className="text-2xl mb-1">{platform.icon}</div>
-                      <p className="font-semibold text-foreground text-sm">{platform.name}</p>
-                      <p className="text-xs text-muted-foreground">{platform.tools}</p>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
-          </div>
         </div>
 
         {/* Architecture pillars */}
@@ -256,10 +144,10 @@ export default function ArchitectureSection() {
             <h4 className="font-bold text-foreground mb-6">Core Technologies</h4>
             <div className="grid md:grid-cols-3 gap-4">
               {[
-                { name: 'Model Context Protocol', version: '@modelcontextprotocol/sdk', type: 'AI Integration Framework' },
-                { name: 'Large Language Models', version: 'OpenAI, Claude, etc.', type: 'AI Assistants' },
+                { name: 'Model Context Protocol', version: '@modelcontextprotocol/sdk ^1.25.2', type: 'AI Integration Framework' },
+                { name: 'Large Language Models', version: 'OpenAI, Claude, Gemini, etc.', type: 'AI Assistants' },
                 { name: 'Zod', version: '^3.25.76', type: 'Schema Validation' },
-                { name: 'Simple Git', version: 'Latest', type: 'Git Operations' },
+                { name: 'Simple Git', version: 'Latest', type: 'Git CLI Operations' },
                 { name: 'REST APIs', version: 'GitHub, Bitbucket, GitLab, Jira', type: 'Platform Integration' },
               ].map((tech, idx) => (
                 <div key={idx} className="p-4 rounded-lg border border-primary/10 hover:border-primary/30 transition-all duration-300 bg-primary/5 hover:bg-primary/10">

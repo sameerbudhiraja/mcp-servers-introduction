@@ -3,11 +3,14 @@
 import { useEffect, useState } from 'react';
 import HeroSection from '@/components/sections/hero';
 import WhatIsSection from '@/components/sections/what-is';
+import GettingStartedSection from '@/components/sections/getting-started';
 import HowItWorksSection from '@/components/sections/how-it-works';
 import ServersSection from '@/components/sections/servers';
-import ComingSoonSection from '@/components/sections/coming-soon';
 import DemoSection from '@/components/sections/demo';
+import UseCasesSection from '@/components/sections/use-cases';
 import ArchitectureSection from '@/components/sections/architecture';
+import ComingSoonSection from '@/components/sections/coming-soon';
+import FAQSection from '@/components/sections/faq';
 import FooterSection from '@/components/sections/footer';
 
 export default function Page() {
@@ -35,11 +38,14 @@ export default function Page() {
       <div className="relative z-10">
         <HeroSection scrollY={scrollY} />
         <WhatIsSection />
+        <GettingStartedSection />
         <HowItWorksSection />
         <ServersSection />
-        <ComingSoonSection />
         <DemoSection />
+        <UseCasesSection />
         <ArchitectureSection />
+        <ComingSoonSection />
+        <FAQSection />
         <FooterSection />
       </div>
     </main>

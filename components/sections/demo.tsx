@@ -134,7 +134,7 @@ export default function DemoSection() {
             },
             {
               title: 'Instant AI Access',
-              description: 'AI assistants immediately have access to all 141+ tools across 4 platforms.',
+              description: 'AI assistants immediately have access to all 141 tools across 4 platforms.',
             },
             {
               title: 'Production Ready',

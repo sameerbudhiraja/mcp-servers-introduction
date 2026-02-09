@@ -132,7 +132,7 @@ export default function ServersSection() {
         {/* Statistics */}
         <div className={`grid md:grid-cols-3 gap-6 transition-all duration-700 ${isVisible ? 'animate-fade-in-up delay-300' : 'opacity-0'}`}>
           <div className="rounded-xl border border-primary/20 bg-primary/5 p-8 text-center hover:border-primary/40 transition-all duration-300">
-            <p className="text-4xl font-bold text-primary mb-2">141+</p>
+            <p className="text-4xl font-bold text-primary mb-2">141</p>
             <p className="text-muted-foreground">Total Tools Available</p>
           </div>
           <div className="rounded-xl border border-primary/20 bg-primary/5 p-8 text-center hover:border-primary/40 transition-all duration-300">

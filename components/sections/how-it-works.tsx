@@ -35,7 +35,7 @@ export default function HowItWorksSection() {
       number: '02',
       title: 'Automated Tool Discovery',
       description: 'The MCP server automatically discovers and registers all available platform tools with comprehensive, type-safe schemas using Zod.',
-      details: ['57+ GitHub tools', '25+ Bitbucket tools', '28+ GitLab tools', '31+ Jira tools'],
+      details: ['57 GitHub tools', '25 Bitbucket tools', '28 GitLab tools', '31 Jira tools'],
     },
     {
       number: '03',

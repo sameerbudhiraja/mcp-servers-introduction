@@ -36,22 +36,21 @@ export default function HeroSection({ scrollY }: HeroSectionProps) {
 
         {/* Main heading */}
         <h1 className={`text-5xl md:text-7xl font-bold mb-8 leading-tight transition-all duration-700 ${isVisible ? 'animate-fade-in-up delay-100' : 'opacity-0'}`}>
-          <span className="text-primary">Enterprise AI Integration</span>
+          <span className="text-primary">AI-Powered Integration</span>
           <span className="block text-foreground">for Development Platforms</span>
         </h1>
 
         {/* Subheading */}
         <p className={`text-lg md:text-xl text-muted-foreground mb-10 max-w-2xl mx-auto leading-relaxed transition-all duration-700 ${isVisible ? 'animate-fade-in-up delay-200' : 'opacity-0'}`}>
-          Connect large language models to GitHub, Bitbucket, GitLab, and Jira using production-ready MCP servers. Enable AI-powered workflows to intelligently manage repositories, track issues, and automate development processes.
+          Production-ready MCP servers connecting AI assistants to GitHub, Bitbucket, GitLab, and Jira. Enable intelligent code management, issue tracking, and workflow automation.
         </p>
 
         {/* CTA Buttons */}
         <div className={`flex flex-col sm:flex-row gap-4 justify-center mb-16 transition-all duration-700 ${isVisible ? 'animate-fade-in-up delay-300' : 'opacity-0'}`}>
-          <button className="relative group px-8 py-4 bg-primary hover:bg-primary/90 text-white font-semibold rounded-lg hover:shadow-lg hover:shadow-primary/40 transition-smooth transform hover:scale-105 flex items-center justify-center gap-2">
-            {/* <span>Explore Servers</span> */}
-            <a href="https://github.com/sameerbudhiraja/mcp_servers" target="_blank" rel="noopener noreferrer">Explore Servers</a>
+          <a href="https://github.com/sameerbudhiraja/mcp_servers" target="_blank" rel="noopener noreferrer" className="relative group px-8 py-4 bg-primary hover:bg-primary/90 text-white font-semibold rounded-lg hover:shadow-lg hover:shadow-primary/40 transition-smooth transform hover:scale-105 flex items-center justify-center gap-2">
+            <span>Explore Servers</span>
             <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
-          </button>
+          </a>
         </div>
 
         {/* Stats */}
@@ -61,7 +60,7 @@ export default function HeroSection({ scrollY }: HeroSectionProps) {
             <p className="text-sm text-muted-foreground mt-1">Platforms</p>
           </div>
           <div className="text-center">
-            <p className="text-2xl md:text-3xl font-bold text-gray-400">141+</p>
+            <p className="text-2xl md:text-3xl font-bold text-gray-400">141</p>
             <p className="text-sm text-muted-foreground mt-1">Tools</p>
           </div>
           <div className="text-center">

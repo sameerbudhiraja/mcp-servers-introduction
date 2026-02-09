@@ -73,13 +73,26 @@ export default function FooterSection() {
           <div className={`transition-all duration-700 ${isVisible ? 'animate-fade-in-up' : 'opacity-0'}`} style={{ animationDelay: isVisible ? '300ms' : '0ms' }}>
             <h4 className="font-semibold text-foreground mb-4">Resources</h4>
             <ul className="space-y-2">
-              {['Documentation', 'API Reference', 'Examples', 'Support'].map((item) => (
-                <li key={item}>
-                  <a href={`https://github.com/sameerbudhiraja/mcp_servers`} target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-white transition-colors text-sm">
-                    {item}
-                  </a>
-                </li>
-              ))}
+              <li>
+                <a href="https://github.com/sameerbudhiraja/mcp_servers#readme" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-white transition-colors text-sm">
+                  Documentation
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/sameerbudhiraja/mcp_servers/tree/main/github#tools-reference" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-white transition-colors text-sm">
+                  Tools Reference
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/sameerbudhiraja/mcp_servers#quick-start" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-white transition-colors text-sm">
+                  Examples
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/sameerbudhiraja/mcp_servers/issues" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-white transition-colors text-sm">
+                  Support
+                </a>
+              </li>
             </ul>
           </div>
 
@@ -87,13 +100,26 @@ export default function FooterSection() {
           <div className={`transition-all duration-700 ${isVisible ? 'animate-fade-in-up' : 'opacity-0'}`} style={{ animationDelay: isVisible ? '400ms' : '0ms' }}>
             <h4 className="font-semibold text-foreground mb-4">Community</h4>
             <ul className="space-y-2">
-              {['GitHub', 'Discussions', 'Contributing', 'License'].map((item) => (
-                <li key={item}>
-                  <a href={`https://github.com/sameerbudhiraja/mcp_servers`} target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-white transition-colors text-sm">
-                    {item}
-                  </a>
-                </li>
-              ))}
+              <li>
+                <a href="https://github.com/sameerbudhiraja/mcp_servers" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-white transition-colors text-sm">
+                  GitHub
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/sameerbudhiraja/mcp_servers/discussions" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-white transition-colors text-sm">
+                  Discussions
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/sameerbudhiraja/mcp_servers/blob/main/CONTRIBUTING.md" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-white transition-colors text-sm">
+                  Contributing
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/sameerbudhiraja/mcp_servers/blob/main/LICENSE" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-white transition-colors text-sm">
+                  MIT License
+                </a>
+              </li>
             </ul>
           </div>
         </div>
@@ -105,7 +131,7 @@ export default function FooterSection() {
             <p className="text-muted-foreground text-sm">Major Platforms Supported</p>
           </div>
           <div className="text-center">
-            <p className="text-3xl font-bold text-cyan-400 mb-2">141+</p>
+            <p className="text-3xl font-bold text-cyan-400 mb-2">141</p>
             <p className="text-muted-foreground text-sm">AI Tools Available</p>
           </div>
           <div className="text-center">
