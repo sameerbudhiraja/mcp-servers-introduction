@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect, useRef, useState } from 'react';
-import { Play, Pause } from 'lucide-react';
+import { Play } from 'lucide-react';
 
 export default function DemoSection() {
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -43,18 +43,16 @@ export default function DemoSection() {
           {/* Video container */}
           <div className="relative aspect-video bg-slate-900 flex items-center justify-center overflow-hidden">
             {/* Play button overlay */}
-            <div className="absolute inset-0 z-10 flex items-center justify-center bg-gradient-to-b from-black/0 via-black/0 to-black/40 group-hover:from-black/20 group-hover:via-black/20 group-hover:to-black/60 transition-all duration-300">
-              <button
-                onClick={() => setIsPlaying(!isPlaying)}
-                className="w-20 h-20 rounded-full bg-primary flex items-center justify-center shadow-2xl shadow-primary/50 hover:shadow-3xl hover:shadow-primary/70 transform hover:scale-110 transition-all duration-300 group-hover:scale-100 scale-90"
+            {!isPlaying && (
+              <div 
+                className="absolute inset-0 z-10 flex items-center justify-center bg-gradient-to-b from-black/0 via-black/0 to-black/40 group-hover:from-black/20 group-hover:via-black/20 group-hover:to-black/60 transition-all duration-300 cursor-pointer"
+                onClick={() => setIsPlaying(true)}
               >
-                {isPlaying ? (
-                  <Pause size={32} className="text-white fill-white ml-1" />
-                ) : (
+                <div className="w-20 h-20 rounded-full bg-primary flex items-center justify-center shadow-2xl shadow-primary/50 hover:shadow-3xl hover:shadow-primary/70 transform hover:scale-110 transition-all duration-300 group-hover:scale-100 scale-90">
                   <Play size={32} className="text-white fill-white ml-1" />
-                )}
-              </button>
-            </div>
+                </div>
+              </div>
+            )}
 
             {/* Video frame simulation - showing demo content */}
             <div className="absolute inset-0 z-0">
@@ -101,7 +99,7 @@ export default function DemoSection() {
             {isPlaying && (
               <iframe
                 className="absolute inset-0 w-full h-full"
-                src="https://www.youtube.com/embed/TYS4y-TeAv8?autoplay=1"
+                src="https://www.youtube.com/embed/TYS4y-TeAv8?autoplay=1&rel=0"
                 title="MCP Servers Demo"
                 frameBorder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
